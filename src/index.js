@@ -2,7 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { App } from './App'
 
-import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client'
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink
+} from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
 import { onError } from '@apollo/client/link/error'
 
@@ -35,17 +40,14 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 })
 
-const root = ReactDOM.createRoot(
-  document.getElementById('app')
-)
+const root = ReactDOM.createRoot(document.getElementById('app'))
 
 root.render(
-  <Context.Provider>
-    <ApolloProvider client={client}>
+  <ApolloProvider client={client}>
+    <Context.Provider>
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </ApolloProvider>
-  </Context.Provider>
-
+    </Context.Provider>
+  </ApolloProvider>
 )

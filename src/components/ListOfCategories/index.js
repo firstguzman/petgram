@@ -5,7 +5,7 @@ import { Loader } from '../Loader'
 
 import { List, Item } from './styles'
 
-export const ListOfCategories = () => {
+const ListOfCategoriesComponent = () => {
   const [categories, loading] = useFetchData('https://petgram-server-firstguzman.vercel.app/categories')
   const [showFixed, setShowFixed] = useState(false)
 
@@ -41,3 +41,5 @@ export const ListOfCategories = () => {
     </>
   )
 }
+
+export const ListOfCategories = React.memo(ListOfCategoriesComponent)

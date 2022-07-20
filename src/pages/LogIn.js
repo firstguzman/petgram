@@ -22,16 +22,14 @@ export const LogIn = () => {
     error && 'La contraseña no es correcta o el usuario no existe.'
 
   return (
-    <>
+    <>|
       <UserForm
         disabled={loading}
         error={errorMsg}
         title='Iniciar Sesión'
         onSubmit={onSubmit}
       />
-      <a>
-        ¿No tienes cuenta? <LinkRouter to='/signup'>Clic aquí</LinkRouter>
-      </a>
+      <LinkRouter to='/signup'>¿No tienes cuenta? Clic aquí</LinkRouter>
     </>
   )
 }
